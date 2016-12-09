@@ -1,0 +1,1 @@
+CREATE TABLE `todos` (`id` INT auto_increment NOT NULL, `content` VARCHAR(50) NOT NULL, `done` DATETIME NULL, `canceled` DATETIME NULL, `created` DATETIME NULL, `openid` VARCHAR(32) NOT NULL, PRIMARY KEY (`id`) USING BTREE);

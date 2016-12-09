@@ -1,0 +1,1 @@
+CREATE TABLE `wx_users` (`id` INT auto_increment NOT NULL, `openid` VARCHAR(40) NOT NULL, `avatarUrl` VARCHAR(200) NULL, `city` VARCHAR(30) NULL, `country` VARCHAR(10) NULL, `gender` SMALLINT NULL, `language` VARCHAR(20) NULL, `nickName` VARCHAR(100) NULL, `province` VARCHAR(30) NULL, UNIQUE INDEX `openid` (`openid`) USING BTREE, PRIMARY KEY (`id`) USING BTREE);

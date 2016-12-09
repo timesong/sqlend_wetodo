@@ -1,0 +1,77 @@
+{
+    "name": "sqlend_wetodo",
+    "title": "微信 Todo 后台",
+    "version": "1.0",
+    "author": "timesong",
+    "license": "MIT",
+    "price": 0,
+    "apis": [
+        {
+            "action": "todos/<openid>",
+            "method": "get",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/get_todos_[openid].js",
+            "tags": "todos",
+            "summary": "获取 todos 表的所有行"
+        },
+        {
+            "action": "todos/",
+            "method": "post",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/post_todos.js",
+            "tags": "todos",
+            "summary": "插入新行到 todos 表"
+        },
+        {
+            "action": "todos/update/<id>",
+            "method": "post",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/post_todos_update_[id].js",
+            "tags": "todos",
+            "summary": "更新 todo 状态"
+        },
+        {
+            "action": "todos/remove-done/<openid>",
+            "method": "delete",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/delete_todos_remove_done_[openid].js",
+            "tags": "todos",
+            "summary": "删除所有已经完成的 Todo"
+        },
+        {
+            "action": "weixin/openid",
+            "method": "get",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/get_weixin_openid.js",
+            "tags": "wx_users",
+            "summary": "获取微信 openid"
+        },
+        {
+            "action": "weixin/userinfo",
+            "method": "post",
+            "policy": 1,
+            "content_type": "json",
+            "source": "apis/post_weixin_userinfo.js",
+            "tags": "wx_users",
+            "summary": "获取微信用户的信息并创建用户。"
+        }
+    ],
+    "tables": [
+        {
+            "name": "todos",
+            "source": "tables/todos.sql",
+            "description": "Todo List"
+        },
+        {
+            "name": "wx_users",
+            "source": "tables/wx_users.sql",
+            "description": "微信用户表"
+        }
+    ],
+    "functions": []
+}
